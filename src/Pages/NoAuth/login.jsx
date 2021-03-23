@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useContext} from "react";
 import {
   InputGroup,
   InputGroupAddon,
@@ -11,11 +11,12 @@ import {
   UncontrolledTooltip,
   Button,
 } from "reactstrap";
-import { useHistory } from "react-router-dom";
+
 import img1 from "../../assets/images/logo-icon.png";
 import img2 from "../../assets/images/background/login-register.jpg";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
+import { AuthContext } from "../../Context/Auth.Context";
 // import { AuthenticationService } from "../../jwt/_services";
 const sidebarBackground = {
   backgroundImage: "url(" + img2 + ")",
@@ -24,13 +25,15 @@ const sidebarBackground = {
 };
 
 const Login = (props) => {
+    const Context=useContext(AuthContext)
+    console.log(Context,'Context')
   const handleClick = () => {
     var elem = document.getElementById("loginform");
     elem.style.transition = "all 2s ease-in-out";
     elem.style.display = "none";
     document.getElementById("recoverform").style.display = "block";
   };
-  let history = useHistory();
+  
 
   return (
     <div className="">
@@ -68,9 +71,13 @@ const Login = (props) => {
                     // { setStatus, setSubmitting }
                   ) => {
                     
-
+                    Context.changeState({
+                        token: "asd123",
+                        role: "administrador",
+                        name: "Pepe ",
+                      })
                     // setStatus();
-                    history.push("/home");
+                    // history.push("/home");
                     // return <Redirect push to="/dashboard"/>
                     // AuthenticationService.login(username, password).then(
                     //   (user) => {
@@ -156,6 +163,7 @@ const Login = (props) => {
                             type="submit"
                             className="btn btn-block btn-primary"
                             disabled={isSubmitting}
+                            // onClick={()=>Context.login()}
                           >
                             Iniciar Sesión
                           </button>

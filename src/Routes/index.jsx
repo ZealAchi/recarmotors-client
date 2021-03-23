@@ -5,6 +5,7 @@ import {
   Switch,
   Redirect
 } from "react-router-dom";
+import NoAuth from "../Pages/NoAuth";
 // import { toast } from "react-toastify";
 // import Layout from "./../Layout";
 
@@ -43,12 +44,8 @@ export default function () {
         {!loading ? (
           <>Loading...</>
         ) : (
-
           <Switch>
             {Rutas.map((item, i) => {
-              console.log(item)
-
-            
                 if (AuthInfo.token !== undefined) {
                   return  <Route
                     key={i}
@@ -56,7 +53,7 @@ export default function () {
                     exact={item.exact}
                     children={<item.component />} />
                 }
-                return <>NO as iniciado sesion</>;
+                return <NoAuth key={i} />;
               
             })}
           </Switch>
