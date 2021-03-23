@@ -5,7 +5,9 @@ import {
   Switch,
   Redirect
 } from "react-router-dom";
+import { AppContext } from "../Context/App.Context";
 import NoAuth from "../Pages/NoAuth";
+import Lockscreen from "../Pages/NoAuth/LockScreen";
 // import { toast } from "react-toastify";
 // import Layout from "./../Layout";
 
@@ -16,11 +18,14 @@ import { Rutas } from "./DataRoute";
 // import Modal from "../ComponentsGlobalUI/Modal";
 const AuthValue = [];
 
-export default function () {
+export default function (props) {
   const { data: AuthInfo } = useContext(AuthContext);
   const { loading, changeState: changeLoad } = useContext(LoadContext);
   const { data: Notification = [] } = useContext(NotificationContext);
+  const { state: stateApp } = useContext(AppContext);
+  useEffect(()=>{
 
+  },[])
   return (
     <div>
       <Router>
@@ -45,16 +50,21 @@ export default function () {
           <>Loading...</>
         ) : (
           <Switch>
+
             {Rutas.map((item, i) => {
-                if (AuthInfo.token !== undefined) {
-                  return  <Route
-                    key={i}
-                    path={item.path}
-                    exact={item.exact}
-                    children={<item.component />} />
-                }
-                return <NoAuth key={i} />;
-              
+              if (AuthInfo.token !== undefined) {
+                return <Route
+                  key={i}
+                  path={item.path}
+                  exact={item.exact}
+                  children={() => {
+                    if (stateApp.statusApp)
+                      return <StatusApp {...stateApp}/>
+                    return <item.component />
+                  }} />
+              }
+              return <NoAuth key={i} />;
+
             })}
           </Switch>
         )}
@@ -63,6 +73,16 @@ export default function () {
       {/* <Modal/> */}
     </div>
   );
+}
+function StatusApp(props) {
+  console.log(props)
+  switch (props.statusApp) {
+    case 'block':
+      return <Lockscreen/>
+    
+    default:
+  return null
+  }
 }
 
 // const Msg = ({ data }) => {

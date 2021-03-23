@@ -26,7 +26,6 @@ const sidebarBackground = {
 
 const Login = (props) => {
     const Context=useContext(AuthContext)
-    console.log(Context,'Context')
   const handleClick = () => {
     var elem = document.getElementById("loginform");
     elem.style.transition = "all 2s ease-in-out";
