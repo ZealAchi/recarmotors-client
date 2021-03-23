@@ -1,0 +1,57 @@
+Arguments: 
+  C:\laragon\bin\nodejs\nodejs-v14\node.exe C:\Users\Alexandra Naite\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add all
+
+PATH: 
+  C:\Users\Alexandra Naite\AppData\Roaming\npm\node_modules\npm\node_modules\npm-lifecycle\node-gyp-bin;C:\Users\Alexandra Naite\Documents\GitHub\RecarMotors\react_client\node_modules\.bin;C:\oraclexe\app\oracle\product\11.2.0\server\bin;;C:\Python38\Scripts\;C:\Python38\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\ATI Technologies\ATI.ACE\Core-Static;C:\WINDOWS\System32\OpenSSH\;C:\ProgramData\chocolatey\bin;C:\Users\Alexandra\AppData\Local\Android\Sdk\platform-tools;C:\Program Files\Java\jdk1.8.0_271\bin;C:\Program Files\watchman-v2020.07.20.00-windows\bin;C:\Program Files\Git\cmd;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\maven-3.6.3\bin;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\laragon\bin;C:\laragon\bin\apache\httpd-2.4.35-win64-VC15\bin;C:\laragon\bin\code;C:\laragon\bin\composer;C:\laragon\bin\git\bin;C:\laragon\bin\git\cmd;C:\laragon\bin\git\mingw64\bin;C:\laragon\bin\git\usr\bin;C:\laragon\bin\go\go1.12\bin;C:\laragon\bin\laragon\utils;C:\laragon\bin\mysql\mysql-5.7.24-winx64\bin;C:\laragon\bin\nginx\nginx-1.16.1;C:\laragon\bin\ngrok;C:\laragon\bin\nodejs\nodejs-v14;C:\laragon\bin\notepad++;C:\laragon\bin\php\php-7.2.19-Win32-VC15-x64;C:\laragon\bin\postgresql\postgresql-11.0-1\bin;C:\laragon\bin\putty;C:\laragon\bin\redis\redis-x64-3.2.100;C:\laragon\bin\telnet;C:\laragon\usr\bin;C:\Users\Alexandra Naite\AppData\Local\Yarn\config\global\node_modules\.bin;C:\Users\Alexandra Naite\AppData\Roaming\Composer\vendor\bin;C:\Users\Alexandra Naite\AppData\Roaming\npm;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\Alexandra Naite\AppData\Local\Microsoft\WindowsApps;C:\Program Files\heroku\bin;C:\Users\Alexandra Naite\AppData\Local\Programs\Mic;;C:\Users\Alexandra Naite\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Alexandra Naite\AppData\Local\Microsoft\WindowsApps
+
+Yarn version: 
+  1.22.4
+
+Node version: 
+  14.0.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: EPERM: operation not permitted, unlink 'C:\Users\Alexandra Naite\Documents\GitHub\RecarMotors\react_client\node_modules\deasync\bin\win32-x64-node-14\deasync.node'
+
+npm manifest: 
+  {
+    "name": "react_client",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "start": "parcel public/index.html --port 5000 --no-autoinstall --no-source-maps"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+      "@babel/core": "^7.13.10",
+      "@babel/plugin-proposal-class-properties": "^7.13.0",
+      "@babel/plugin-transform-runtime": "^7.13.10",
+      "apexcharts": "^3.26.0",
+      "axios": "^0.21.1",
+      "chart.js": "^2.9.4",
+      "chroma-js": "^2.1.1",
+      "feather-icons-react": "^0.4.3",
+      "parcel-bundler": "^1.12.5",
+      "node-sass": "^5.0.0",
+      "react": "^17.0.1",
+      "react-apexcharts": "^1.3.7",
+      "react-bootstrap-sweetalert": "^5.2.0",
+      "react-dom": "^17.0.1",
+      "react-router-dom": "^5.2.0",
+      "react-sparklines": "^1.7.0",
+      "react-stepzilla": "^6.0.2",
+      "reactstrap": "^8.9.0"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
