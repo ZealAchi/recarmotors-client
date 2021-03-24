@@ -1,13 +1,7 @@
-import React, { Children } from 'react'
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link
-} from "react-router-dom";
+import React from 'react'
 import Auth from '../Pages/Auth';
+import {Usuarios} from '../Pages/Auth/Usuarios';
 import NoMatch from '../Pages/NoMatch';
-import NoAuth from "./../Pages/NoAuth";
 export const Rutas = [
     {
         exact: true,
@@ -19,7 +13,10 @@ export const Rutas = [
         path: "/dashboard/Usuarios",
         component: () => <>Dashboard</>
     },
-    
+    {
+        path:"/usuarios",
+        component: () => <Usuarios />
+    },
     {
         exact: true,
         path: "*",

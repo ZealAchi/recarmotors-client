@@ -6,8 +6,7 @@ import {
 import img1 from '../assets/images/logo-icon.png';
 
 const NoMatch = () => {
-    return <div className="">
-        <div className="error-box">
+    return <div className="error-box" style={{position: "fixed",left: 0,top: 0,zIndex: 50}}>
             <div className="error-body text-center">
                 <img src={img1} alt="" />
                 <h4 className="text-dark font-24">RecarMotors</h4>
@@ -31,7 +30,6 @@ const NoMatch = () => {
                 </Button>{' '} */}
             </div>
         </div>
-    </div>;
 }
 
 export default NoMatch;

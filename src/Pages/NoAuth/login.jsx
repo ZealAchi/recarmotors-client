@@ -47,7 +47,7 @@ const Login = (props) => {
           <div id="loginform">
             <div className="logo">
               <span className="db">
-                <img src={img1} alt="logo" />
+                <img src={"http://www.recarmotors.com/images/logopng.png"} alt="logo" height="80"/>
               </span>
               <h5 className="font-medium mb-3">Iniciar sesión</h5>
               <div className="alert alert-success">

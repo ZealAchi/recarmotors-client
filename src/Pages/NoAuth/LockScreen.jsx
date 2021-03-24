@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import {
     FormGroup,
     Form,
@@ -9,6 +9,7 @@ import {
 } from 'reactstrap';
 import img1 from '../../assets/images/users/7.jpg';
 import img2 from '../../assets/images/big/auth-bg.jpg';
+import { AppContext } from '../../Context/App.Context';
 
 const sidebarBackground = {
     backgroundImage: "url(" + img2 + ")",
@@ -17,6 +18,7 @@ const sidebarBackground = {
 };
 
 const Lockscreen = () => {
+    const {setState}=useContext(AppContext)
     return <div className="">
         {/*--------------------------------------------------------------------------------*/}
         {/*Lockscreen Cards*/}
@@ -36,7 +38,7 @@ const Lockscreen = () => {
                                 </FormGroup>
                                 <Row className="mb-4">
                                     <Col xs="12">
-                                        <Button color="primary" size="lg" type="submit" className="text-uppercase" block>Log In</Button>
+                                        <Button color="primary" size="lg" type="submit" className="text-uppercase" block onClick={()=>setState({statusApp:undefined})}>Log In</Button>
                                     </Col>
                                 </Row>
                             </Form>

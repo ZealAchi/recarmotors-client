@@ -68,12 +68,13 @@ const Header = () => {
           {/*--------------------------------------------------------------------------------*/}
           <NavbarBrand href="/">
             <b className="logo-icon">
-              <img src={logodarkicon} alt="homepage" className="dark-logo" />
-              <img src={logolighticon} alt="homepage" className="light-logo" />
+              {/* <img src={'http://www.recarmotors.com/images/logopng.png'} height="30px" width="80px" alt="homepage" className="dark-logo" /> */}
+              {/* <img src={'http://www.recarmotors.com/images/logopng.png'} height="30px" width="80px" alt="homepage" className="light-logo" /> */}
             </b>
             <span className="logo-text">
-              <img src={logodarktext} alt="homepage" className="dark-logo" />
-              <img src={logolighttext} className="light-logo" alt="homepage" />
+              <h4>RecarMotors</h4>
+              {/* <img src={logodarktext} alt="homepage" className="dark-logo" /> */}
+              {/* <img src={logolighttext} className="light-logo" alt="homepage" /> */}
             </span>
           </NavbarBrand>
           {/*--------------------------------------------------------------------------------*/}
