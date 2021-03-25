@@ -1,6 +1,8 @@
 import React from 'react'
 import Auth from '../Pages/Auth';
 import { Compras } from '../Pages/Auth/Compras';
+import { DashBoardUsuarios } from '../Pages/Auth/DashBoard/Usuario';
+import { DashBoardCompras } from '../Pages/Auth/DashBoard/Compras';
 import { Roles } from '../Pages/Auth/Roles';
 import { Translados } from '../Pages/Auth/Translados';
 import { AsignarTranslados } from '../Pages/Auth/Translados/asignar';
@@ -8,17 +10,27 @@ import { Usuarios } from '../Pages/Auth/Usuarios';
 import { CrearUsuario } from '../Pages/Auth/Usuarios/CrearUsuario';
 import { DetalleUsuario } from '../Pages/Auth/Usuarios/DetalleUsuario';
 import NoMatch from '../Pages/NoMatch';
+import { Vehiculos } from '../Pages/Auth/Vehiculos';
 export const Rutas = [
-    
     {
         exact: true,
         path: "/",
         component: () => <Auth />
     },
-
     {
+        exact: true,
+        path: "/vehiculos",
+        component: () => <Vehiculos />
+    },
+    {
+         exact: true,
         path: "/dashboard/Usuarios",
-        component: () => <>Dashboard</>
+        component: () => <DashBoardUsuarios />
+    },
+    {
+         exact: true,
+        path: "/dashboard/Compras",
+        component: () => <DashBoardCompras />
     },
     {
         exact: true,
@@ -39,24 +51,25 @@ export const Rutas = [
         path: "/roles",
         component: () => <Roles />
     },
-    
+
     {
         exact: true,
         path: "/compras",
-        component: () => <Compras/>
+        component: () => <Compras />
     },
     {
-        exact:true,
-        path:"/translados",
-        component:()=><Translados/>
+        exact: true,
+        path: "/translados",
+        component: () => <Translados />
     },
     {
-        exact:true,
-        path:"/translados/asignar",
-        component:()=><AsignarTranslados/>
+        exact: true,
+        path: "/translados/asignar",
+        component: () => <AsignarTranslados />
     },
+    
 
-
+    
 
 
 
@@ -91,7 +104,7 @@ export var ThemeRoutes = [
                 component: () => { return <>Usuarios</> },
             },
             {
-                path: "/dashboards/Compras",
+                path: "/dashboard/Compras",
                 name: "Compras",
                 icon: "mdi mdi-adjust",
                 component: () => { return <>Compras</> },
@@ -111,6 +124,11 @@ export var ThemeRoutes = [
         icon: "airplay",
         extra: "",
         child: [
+            {
+                path: "/vehiculos",
+                name: "Vehiculos",
+                icon: "mdi mdi-adjust",
+            },
             {
                 path: "/compras",
                 name: "Compras",
