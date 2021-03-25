@@ -124,7 +124,7 @@ export function Compras() {
             </CardBody>
             <CardBody>
                 <Row>
-                    <Col sm={2} lg={2}>
+                    <Col sm={1} lg={1}>
                     {/* <div style={{ width: 120 }}>
                             <span data-balloon="size: 5x" data-balloon-pos="up" class="db color-inherit link hover-pink"><svg aria-hidden="true" focusable="false" data-prefix="fad" data-icon="car" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-car fa-w-16 fa-5x"><g class="fa-group"><path fill="currentColor" d="M319.5 128a48 48 0 0 1 44.57 30.17L384 208H128l19.93-49.83A48 48 0 0 1 192.5 128zM80 384a63.82 63.82 0 0 1-47.57-21.2A31.82 31.82 0 0 0 32 368v48a32 32 0 0 0 32 32h32a32 32 0 0 0 32-32v-32zm352 0h-48v32a32 32 0 0 0 32 32h32a32 32 0 0 0 32-32v-48a31.82 31.82 0 0 0-.43-5.2A63.82 63.82 0 0 1 432 384z" class="fa-secondary"></path><path fill="currentColor" d="M500 176h-59.88l-16.64-41.6A111.43 111.43 0 0 0 319.5 64h-127a111.47 111.47 0 0 0-104 70.4L71.87 176H12A12 12 0 0 0 .37 190.91l6 24A12 12 0 0 0 18 224h20.08A63.55 63.55 0 0 0 16 272v48a64 64 0 0 0 64 64h352a64 64 0 0 0 64-64v-48a63.58 63.58 0 0 0-22.07-48H494a12 12 0 0 0 11.64-9.09l6-24A12 12 0 0 0 500 176zm-352.07-17.83A48 48 0 0 1 192.5 128h127a48 48 0 0 1 44.57 30.17L384 208H128zM96 256c19.2 0 48 28.71 48 47.85s-28.8 15.95-48 15.95-32-12.8-32-31.9S76.8 256 96 256zm272 47.85c0-19.14 28.8-47.85 48-47.85s32 12.76 32 31.9-12.8 31.9-32 31.9-48 3.2-48-15.95z" class="fa-primary"></path></g></svg></span>
                         </div>
@@ -138,7 +138,7 @@ export function Compras() {
                         <span data-balloon="size: 5x" data-balloon-pos="up" class="db color-inherit link hover-grape"><svg aria-hidden="true" focusable="false" data-prefix="fad" data-icon="car-side" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" class="svg-inline--fa fa-car-side fa-w-20 fa-5x"><g class="fa-group"><path fill="currentColor" d="M144 320a80 80 0 1 0 80 80 80 80 0 0 0-80-80zm352 0a80 80 0 1 0 80 80 80 80 0 0 0-80-80zM369.24 96H280v96h166zm-252.31 96H232V96h-76.67z" class="fa-secondary"></path><path fill="currentColor" d="M16 384h17.14a112 112 0 0 1 221.72 0h130.28a112 112 0 0 1 221.72 0H624a16 16 0 0 0 16-16v-80a96 96 0 0 0-96-96h-16L419.22 56a64 64 0 0 0-50-24H155.33a64 64 0 0 0-59.42 40.23L48 194.26A63.85 63.85 0 0 0 0 256v112a16 16 0 0 0 16 16zM280 96h89.24L446 192H280zm-124.67 0H232v96H116.93z" class="fa-primary"></path></g></svg></span>
                         </div> */}
                     </Col>
-                    <Col sm={10} lg={10}>
+                    <Col sm={9} lg={9}>
                         <>
                             <Steps current={current}>
                                 {steps.map(item => (
@@ -164,6 +164,9 @@ export function Compras() {
                                 )}
                             </div>
                         </>
+                    </Col>
+                    <Col sm={1} lg={1}>
+
                     </Col>
                 </Row>
             </CardBody>

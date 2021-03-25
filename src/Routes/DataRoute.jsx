@@ -2,6 +2,8 @@ import React from 'react'
 import Auth from '../Pages/Auth';
 import { Compras } from '../Pages/Auth/Compras';
 import { Roles } from '../Pages/Auth/Roles';
+import { Translados } from '../Pages/Auth/Translados';
+import { AsignarTranslados } from '../Pages/Auth/Translados/asignar';
 import { Usuarios } from '../Pages/Auth/Usuarios';
 import { CrearUsuario } from '../Pages/Auth/Usuarios/CrearUsuario';
 import { DetalleUsuario } from '../Pages/Auth/Usuarios/DetalleUsuario';
@@ -43,6 +45,18 @@ export const Rutas = [
         path: "/compras",
         component: () => <Compras/>
     },
+    {
+        exact:true,
+        path:"/translados",
+        component:()=><Translados/>
+    },
+    {
+        exact:true,
+        path:"/translados/asignar",
+        component:()=><AsignarTranslados/>
+    },
+
+
 
 
 
@@ -101,7 +115,36 @@ export var ThemeRoutes = [
                 path: "/compras",
                 name: "Compras",
                 icon: "mdi mdi-adjust",
-                
+            },
+            {
+                path: "/translados",
+                name: "Translados",
+                icon: "mdi mdi-adjust",
+            },
+            {
+                path: "/mecanica",
+                name: "Compras",
+                icon: "mdi mdi-adjust",
+            },
+            {
+                path: "/almacen",
+                name: "Almacen",
+                icon: "mdi mdi-adjust",
+            },
+            {
+                path: "/asignaciondevehiculos",
+                name: "Asignacion de vehiculos",
+                icon: "mdi mdi-adjust",
+            },
+            {
+                path: "/previas",
+                name: "Previas",
+                icon: "mdi mdi-adjust",
+            },
+            {
+                path: "/entregas",
+                name: "Entregas",
+                icon: "mdi mdi-adjust",
             },
         ]
     }
