@@ -5,25 +5,28 @@ import { Button, Card, CardBody, CardTitle, Col, Form, FormGroup, Input, Label, 
 import Datetime from "react-datetime";
 import Swal from 'sweetalert2'
 import "react-datetime/css/react-datetime.css";
+import { useHistory } from 'react-router-dom';
 
 // const { Step } = Steps;
 
 export function Compras() {
-    const GuardarCompra=()=>{
-    Swal.fire({
-        icon: 'success',
-        title: 'Vehiculo Guardado',
-        text: '¿Deseas asignarle sus Caracteristicas?',
-        showDenyButton: true,
-        showCancelButton: false,
-    }).then((result) => {
-        if (result.isConfirmed) {
-            console.log("navegar")
-        } else if (result.isDenied) {
+    let history = useHistory();
+    const GuardarCompra = () => {
+        Swal.fire({
+            icon: 'success',
+            title: 'Vehiculo Guardado',
+            text: '¿Deseas asignarle sus Caracteristicas?',
+            showDenyButton: true,
+            showCancelButton: false,
+        }).then((result) => {
+            if (result.isConfirmed) {
 
-        }
-    })
-}
+                history.push("/vehiculos/show/12");
+            } else if (result.isDenied) {
+
+            }
+        })
+    }
     return (
 
         <Card>
@@ -120,7 +123,7 @@ export function Compras() {
                                     </FormGroup>
                                 </Col>
                             </Row>
-                            <Button className="btn btn-success" onClick={()=>GuardarCompra()}>Guardar</Button>
+                            <Button className="btn btn-success" onClick={() => GuardarCompra()}>Guardar</Button>
                         </Form>
                     </Col>
                     <Col sm={1} lg={1}>

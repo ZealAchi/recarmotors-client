@@ -12,6 +12,7 @@ import { DetalleUsuario } from '../Pages/Auth/Usuarios/DetalleUsuario';
 import NoMatch from '../Pages/NoMatch';
 import { Vehiculos } from '../Pages/Auth/Vehiculos';
 import { ShowVehicle } from '../Pages/Auth/Vehiculos/show';
+import { Mecanica } from '../Pages/Auth/Mecanica';
 export const Rutas = [
     {
         exact: true,
@@ -73,8 +74,11 @@ export const Rutas = [
         path: "/translados/asignar",
         component: () => <AsignarTranslados />
     },
-    
-
+    {
+        exact:true,
+        path:"/mecanica",
+        component:()=><Mecanica/>
+    },
 
     
 
@@ -148,7 +152,7 @@ export var ThemeRoutes = [
             },
             {
                 path: "/mecanica",
-                name: "Compras",
+                name: "Mecanica",
                 icon: "mdi mdi-adjust",
             },
             {
