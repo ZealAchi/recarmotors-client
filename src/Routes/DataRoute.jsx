@@ -11,6 +11,7 @@ import { CrearUsuario } from '../Pages/Auth/Usuarios/CrearUsuario';
 import { DetalleUsuario } from '../Pages/Auth/Usuarios/DetalleUsuario';
 import NoMatch from '../Pages/NoMatch';
 import { Vehiculos } from '../Pages/Auth/Vehiculos';
+import { ShowVehicle } from '../Pages/Auth/Vehiculos/show';
 export const Rutas = [
     {
         exact: true,
@@ -21,6 +22,11 @@ export const Rutas = [
         exact: true,
         path: "/vehiculos",
         component: () => <Vehiculos />
+    },
+    {
+        exact: true,
+        path: "/vehiculos/show/:id",
+        component: () => <ShowVehicle />
     },
     {
          exact: true,
@@ -68,6 +74,7 @@ export const Rutas = [
         component: () => <AsignarTranslados />
     },
     
+
 
     
 
