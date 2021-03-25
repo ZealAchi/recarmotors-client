@@ -110,8 +110,8 @@ const Header = () => {
             {/*--------------------------------------------------------------------------------*/}
             {/* Start Notifications Dropdown                                                   */}
             {/*--------------------------------------------------------------------------------*/}
-            <UncontrolledDropdown nav inNavbar>
-              <DropdownToggle nav caret>
+            {/* <UncontrolledDropdown nav inNavbar> */}
+              {/* <DropdownToggle nav caret>
                 <i className="mdi mdi-bell font-24" />
               </DropdownToggle>
               <DropdownMenu right className="mailbox">
@@ -126,7 +126,7 @@ const Header = () => {
                 </div>
                 <div className="message-center notifications">
                   {/*<!-- Message -->*/}
-                  {data.notifications.map((notification, index) => {
+                  {/* {data.notifications.map((notification, index) => { 
                     return (
                       <span href="" className="message-item" key={index}>
                         <span
@@ -152,14 +152,14 @@ const Header = () => {
                   <i className="fa fa-angle-right" />
                 </a>
               </DropdownMenu>
-            </UncontrolledDropdown>
+            </UncontrolledDropdown> */}
             {/*--------------------------------------------------------------------------------*/}
             {/* End Notifications Dropdown                                                     */}
             {/*--------------------------------------------------------------------------------*/}
             {/*--------------------------------------------------------------------------------*/}
             {/* Start Messages Dropdown                                                        */}
             {/*--------------------------------------------------------------------------------*/}
-            <UncontrolledDropdown nav inNavbar>
+            {/* <UncontrolledDropdown nav inNavbar>
               <DropdownToggle nav caret>
                 <i className="font-24 mdi mdi-comment-processing" />
               </DropdownToggle>
@@ -173,9 +173,9 @@ const Header = () => {
                     <p className="mb-0">Messages</p>
                   </div>
                 </div>
-                <div className="message-center message-body">
+                <div className="message-center message-body"> */}
                   {/*<!-- Message -->*/}
-                  {data.messages.map((message, index) => {
+                  {/* {data.messages.map((message, index) => {
                     return (
                       <span href="" className="message-item" key={index}>
                         <span className="user-img">
@@ -204,7 +204,7 @@ const Header = () => {
                   <b>See all e-Mails</b> <i className="fa fa-angle-right" />
                 </span>
               </DropdownMenu>
-            </UncontrolledDropdown>
+            </UncontrolledDropdown> */}
             {/*--------------------------------------------------------------------------------*/}
             {/* End Messages Dropdown                                                          */}
             {/*--------------------------------------------------------------------------------*/}
@@ -238,7 +238,7 @@ const Header = () => {
                     <p className=" mb-0">varun@gmail.com</p>
                   </div>
                 </div>
-                <DropdownItem>
+                {/* <DropdownItem>
                   <i className="ti-user mr-1 ml-1" /> My Account
                 </DropdownItem>
                 <DropdownItem>
@@ -246,18 +246,18 @@ const Header = () => {
                 </DropdownItem>
                 <DropdownItem>
                   <i className="ti-email mr-1 ml-1" /> Inbox
-                </DropdownItem>
-                <DropdownItem divider />
+                </DropdownItem> */}
+                {/* <DropdownItem divider />
                 <DropdownItem>
                   <i className="ti-settings mr-1 ml-1" /> Account Settings
-                </DropdownItem>
+                </DropdownItem> */}
                 <DropdownItem divider />
                 <DropdownItem href="/pages/login">
-                  <i className="fa fa-power-off mr-1 ml-1" /> Logout
+                  <i className="fa fa-power-off mr-1 ml-1" /> Cerrar Sesiòn
                 </DropdownItem>
                 <DropdownItem divider />
                 <Button color="success" className="btn-rounded ml-3 mb-2 mt-2">
-                  View Profile
+                Ver perfil
                 </Button>
               </DropdownMenu>
             </UncontrolledDropdown>
