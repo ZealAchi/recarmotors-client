@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import {
   Nav,
   Button,
@@ -30,10 +30,20 @@ import logodarktext from "../../../assets/images/logo-text.png";
 import logolighttext from "../../../assets/images/logo-light-text.png";
 import profilephoto from "../../../assets/images/users/1.jpg";
 
-const Header = () => {
-  const [isOpen, setIsOpen] = useState(false);
+import { AuthContext } from "../../../Context/Auth.Context";
+import { useHistory } from 'react-router-dom';
 
-//   const settings = useSelector((state) => state.settings);
+const Header = () => {
+  let history = useHistory();
+  const [isOpen, setIsOpen] = useState(false);
+  const {cerrarSesion}=useContext(AuthContext)
+  
+
+  const CerrarSesion = () => {
+    cerrarSesion();
+    history.push("/")
+  }
+  //   const settings = useSelector((state) => state.settings);
 
   const toggle = () => {
     setIsOpen(!isOpen);
@@ -66,13 +76,13 @@ const Header = () => {
           {/*--------------------------------------------------------------------------------*/}
           {/* Logos Or Icon will be goes here for Light Layout && Dark Layout                */}
           {/*--------------------------------------------------------------------------------*/}
-          <NavbarBrand href="/">
+          <NavbarBrand className="navbar-brand" onClick={()=>history.push("/")}>
             <b className="logo-icon">
               {/* <img src={'http://www.recarmotors.com/images/logopng.png'} height="30px" width="80px" alt="homepage" className="dark-logo" /> */}
               {/* <img src={'http://www.recarmotors.com/images/logopng.png'} height="30px" width="80px" alt="homepage" className="light-logo" /> */}
             </b>
             <span className="logo-text">
-              <h4>RecarMotors</h4>
+              <h4 style={{color:"#fff",cursor:'pointer'}}>RecarMotors</h4>
               {/* <img src={logodarktext} alt="homepage" className="dark-logo" /> */}
               {/* <img src={logolighttext} className="light-logo" alt="homepage" /> */}
             </span>
@@ -94,14 +104,14 @@ const Header = () => {
             {/*--------------------------------------------------------------------------------*/}
             {/* Start Mega Menu Dropdown                                                       */}
             {/*--------------------------------------------------------------------------------*/}
-            
+
             {/*--------------------------------------------------------------------------------*/}
             {/* End Mega Menu Dropdown                                                         */}
             {/*--------------------------------------------------------------------------------*/}
             {/*--------------------------------------------------------------------------------*/}
             {/* Start Create New Dropdown                                                      */}
             {/*--------------------------------------------------------------------------------*/}
-            
+
             {/*--------------------------------------------------------------------------------*/}
             {/* End Create New Dropdown                                                        */}
             {/*--------------------------------------------------------------------------------*/}
@@ -111,7 +121,7 @@ const Header = () => {
             {/* Start Notifications Dropdown                                                   */}
             {/*--------------------------------------------------------------------------------*/}
             {/* <UncontrolledDropdown nav inNavbar> */}
-              {/* <DropdownToggle nav caret>
+            {/* <DropdownToggle nav caret>
                 <i className="mdi mdi-bell font-24" />
               </DropdownToggle>
               <DropdownMenu right className="mailbox">
@@ -126,7 +136,7 @@ const Header = () => {
                 </div>
                 <div className="message-center notifications">
                   {/*<!-- Message -->*/}
-                  {/* {data.notifications.map((notification, index) => { 
+            {/* {data.notifications.map((notification, index) => { 
                     return (
                       <span href="" className="message-item" key={index}>
                         <span
@@ -174,8 +184,8 @@ const Header = () => {
                   </div>
                 </div>
                 <div className="message-center message-body"> */}
-                  {/*<!-- Message -->*/}
-                  {/* {data.messages.map((message, index) => {
+            {/*<!-- Message -->*/}
+            {/* {data.messages.map((message, index) => {
                     return (
                       <span href="" className="message-item" key={index}>
                         <span className="user-img">
@@ -234,8 +244,8 @@ const Header = () => {
                     />
                   </div>
                   <div className="ml-2">
-                    <h4 className="mb-0">Steave Jobs</h4>
-                    <p className=" mb-0">varun@gmail.com</p>
+                    <h4 className="mb-0">Jose </h4>
+                    <p className=" mb-0">Jose@gmail.com</p>
                   </div>
                 </div>
                 {/* <DropdownItem>
@@ -252,12 +262,12 @@ const Header = () => {
                   <i className="ti-settings mr-1 ml-1" /> Account Settings
                 </DropdownItem> */}
                 <DropdownItem divider />
-                <DropdownItem href="/pages/login">
+                <DropdownItem onClick={() => CerrarSesion()}>
                   <i className="fa fa-power-off mr-1 ml-1" /> Cerrar Sesiòn
                 </DropdownItem>
                 <DropdownItem divider />
                 <Button color="success" className="btn-rounded ml-3 mb-2 mt-2">
-                Ver perfil
+                  Ver perfil
                 </Button>
               </DropdownMenu>
             </UncontrolledDropdown>

@@ -1,4 +1,4 @@
-import React, { useState, createContext } from 'react'
+import React, { useState, createContext, useEffect } from 'react'
 
 export const AuthContext = createContext()
 const initialData = {
@@ -6,7 +6,6 @@ const initialData = {
     token: undefined,
     role: undefined,
     name: undefined,
-
   }
 }
 export default function AuthContextProvider({ children }) {
@@ -14,8 +13,13 @@ export default function AuthContextProvider({ children }) {
   const changeState = (value) => {
     setState({ ...state, data: { ...value } })
   }
+  const cerrarSesion = () => {
+    setState(initialData)
+  }
+  
+
   return (
-    <AuthContext.Provider value={{ ...state, changeState }}>
+    <AuthContext.Provider value={{ ...state, changeState, cerrarSesion }}>
       {children}
     </AuthContext.Provider>
   )

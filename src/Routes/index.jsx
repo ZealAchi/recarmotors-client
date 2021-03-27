@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import Spinner from "../Components/spinner/Spinner";
 import { AppContext } from "../Context/App.Context";
+import { useLocalStorage } from "../Hooks/useLocalStorange";
 import FullLayout from "../Layout/FullLayout";
 import NoAuth from "../Pages/NoAuth";
 import Lockscreen from "../Pages/NoAuth/LockScreen";
@@ -22,13 +23,18 @@ import { Rutas } from "./DataRoute";
 const AuthValue = [];
 
 export default function (props) {
-  const { data: AuthInfo } = useContext(AuthContext);
+  const { data: AuthInfo, changeState } = useContext(AuthContext);
   const { loading, changeState: changeLoad } = useContext(LoadContext);
   const { data: Notification = [] } = useContext(NotificationContext);
   const { state: stateApp } = useContext(AppContext);
-  useEffect(()=>{
-
-  },[])
+  const { getData, setData } = useLocalStorage();
+  useEffect(() => {
+    getData('AuthInfo', changeState)
+    // removeItem('AuthInfo')
+  }, [])
+  useEffect(() => {
+    setData('AuthInfo', { ...AuthInfo })
+  }, [AuthInfo])
   return (
     <div>
       <Router>
@@ -36,26 +42,24 @@ export default function (props) {
           <>Loading...</>
         ) : (
           <Suspense fallback={<Spinner />}>
-          <Switch>
-            {Rutas.map((item, i) => {
-              if (AuthInfo.token !== undefined) {
-                return <Route
-                  key={i}
-                  path={item.path}
-                  exact={item.exact}
-                  children={() => {
-                    if (stateApp.statusApp)
-                      return <StatusApp {...stateApp}/>
-                    return <FullLayout><item.component /></FullLayout>
-                  }} />
-              }
-              return <NoAuth key={i} />;
-
-            })}
-          </Switch>
-          </Suspense> 
+            <Switch>
+              {Rutas.map((item, i) => {
+                if (AuthInfo.token !== undefined) {
+                  return <Route
+                    key={i}
+                    path={item.path}
+                    exact={item.exact}
+                    children={() => {
+                      if (stateApp.statusApp)
+                        return <StatusApp {...stateApp} />
+                      return <FullLayout><item.component /></FullLayout>
+                    }} />
+                }
+                return <NoAuth key={i} />;
+              })}
+            </Switch>
+          </Suspense>
         )}
-        {/* </Layout> */}
       </Router>
       {/* <Modal/> */}
     </div>
@@ -65,9 +69,9 @@ function StatusApp(props) {
   console.log(props)
   switch (props.statusApp) {
     case 'block':
-      return <Lockscreen/>
-    
+      return <Lockscreen />
+
     default:
-  return null
+      return null
   }
 }

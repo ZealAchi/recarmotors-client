@@ -2,8 +2,13 @@ import React from 'react'
 import { Row, Col, Form, FormGroup, Label, Input, Button, CardBody, Card } from 'reactstrap'
 
 import Select, { components } from "react-select";
-import { colourOptions, groupedOptions, transladistas } from './Data';
+import { colourOptions, transladistas } from './Data';
+import { useHistory } from 'react-router-dom';
 export function Translados() {
+    const history=useHistory()
+    const asignar=()=>{
+        history.push("/translados/asignar")
+    }
     return (<>
         <Row>
             <Col sm={12} lg={12}>
@@ -52,12 +57,13 @@ export function Translados() {
                                     <FormGroup>
                                         <Label >Transladista</Label>
                                         <Select
-                                            // defaultValue={"colourOptions[1]"}
                                             options={transladistas}
                                             components={{ MenuList }}
                                         />
                                     </FormGroup>
-                                    <Button class="btn btn-large">Asignar</Button>
+                                </Col>
+                                <Col sm={12} lg={4} style={{alignSelf: 'center'}}>
+                                        <Button  className="btn btn-lg" onClick={()=>asignar()}>Asignar</Button>
                                 </Col>
                             </Row>
                         </Form>

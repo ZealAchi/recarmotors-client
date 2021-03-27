@@ -1,4 +1,4 @@
-import React,{useContext} from "react";
+import React, { useContext } from "react";
 import {
   InputGroup,
   InputGroupAddon,
@@ -12,8 +12,8 @@ import {
   Button,
 } from "reactstrap";
 
-import img1 from "../../assets/images/logo-icon.png";
-import img2 from "../../assets/images/background/login-register.jpg";
+import img1 from "../../assets/images/logo-icon.jpg";
+import img2 from "../../assets/images/background/background1.jpg";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { AuthContext } from "../../Context/Auth.Context";
@@ -25,14 +25,15 @@ const sidebarBackground = {
 };
 
 const Login = (props) => {
-    const Context=useContext(AuthContext)
+
+  const Context = useContext(AuthContext)
   const handleClick = () => {
     var elem = document.getElementById("loginform");
     elem.style.transition = "all 2s ease-in-out";
     elem.style.display = "none";
     document.getElementById("recoverform").style.display = "block";
   };
-  
+
 
   return (
     <div className="">
@@ -47,7 +48,7 @@ const Login = (props) => {
           <div id="loginform">
             <div className="logo">
               <span className="db">
-                <img src={"http://www.recarmotors.com/images/logopng.png"} alt="logo" height="80"/>
+                <img src={img1} alt="logo" height="180" />
               </span>
               <h5 className="font-medium mb-3">Iniciar sesión</h5>
               <div className="alert alert-success">
@@ -69,12 +70,12 @@ const Login = (props) => {
                     // { username, password },
                     // { setStatus, setSubmitting }
                   ) => {
-                    
+
                     Context.changeState({
-                        token: "asd123",
-                        role: "administrador",
-                        name: "Pepe ",
-                      })
+                      token: "asd123",
+                      role: "administrador",
+                      name: "Pepe ",
+                    })
                     // setStatus();
                     // history.push("/home");
                     // return <Redirect push to="/dashboard"/>
@@ -91,9 +92,9 @@ const Login = (props) => {
                     //   }
                     // );
                   }}
-                  render={({ errors, status, touched, isSubmitting=true }) => (
+                  render={({ errors, status, touched, isSubmitting = true }) => (
                     <Form className="mt-3" id="loginform">
-                        
+
                       <InputGroup className="mb-3">
                         <InputGroupAddon addonType="prepend">
                           <InputGroupText>
@@ -162,14 +163,14 @@ const Login = (props) => {
                             type="submit"
                             className="btn btn-block btn-primary"
                             disabled={isSubmitting}
-                            // onClick={()=>Context.login()}
+                          // onClick={()=>Context.login()}
                           >
                             Iniciar Sesión
                           </button>
                         </Col>
                       </Row>
                       <div className="text-center mb-2">
-                        
+
                       </div>
                       {status && (
                         <div className={"alert alert-danger"}>{status}</div>
@@ -187,7 +188,7 @@ const Login = (props) => {
               </span>
               <h5 className="font-medium mb-3">Recuperar contraseña</h5>
               <span>
-              Ingrese su correo electrónico y se le enviarán las instrucciones.
+                Ingrese su nombre de usuario electrónico y se le enviarán las instrucciones.
               </span>
             </div>
             <Row className="mt-3">

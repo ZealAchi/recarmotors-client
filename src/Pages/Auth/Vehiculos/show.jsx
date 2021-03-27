@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Button, Card, CardBody, Col, Form, FormGroup, Input, Label, Row } from 'reactstrap'
+import { CardVehicle } from '../../../Components/Card/CardVehicle/CardVehicle1'
 export function ShowVehicle() {
     return (<>
         <Row>
@@ -12,19 +13,7 @@ export function ShowVehicle() {
         </Row>
     </>)
 }
-const CardVehicle = () => {
-    return (<Card>
-        <CardBody className="text-center">
-            <div className="profile-pic mb-3 mt-3">
-                <img src={'https://gravatar.com/avatar/?s12&d=retro'} width="150" alt="vehicle" />
-                <h4 className="mt-3 mb-0">Marca</h4>
-                <a href="/">Modelo</a>
-                <h5 className="mt-3 mb-0">No. Serie</h5>
-            </div>
-            {/* <div className="badge badge-pill badge-light font-16">Administrador</div> */}
-        </CardBody>
-    </Card>)
-}
+
 const InfoVehicle = () => {
     const [showMore, setShowMore] = useState(false)
     return (
