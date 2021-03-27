@@ -18,7 +18,7 @@ const sidebarBackground = {
 };
 
 const Lockscreen = () => {
-    const {setState}=useContext(AppContext)
+    const {ChangeState,state}=useContext(AppContext)
     return <div className="">
         {/*--------------------------------------------------------------------------------*/}
         {/*Lockscreen Cards*/}
@@ -38,7 +38,7 @@ const Lockscreen = () => {
                                 </FormGroup>
                                 <Row className="mb-4">
                                     <Col xs="12">
-                                        <Button color="primary" size="lg" type="submit" className="text-uppercase" block onClick={()=>setState({statusApp:undefined})}>Iniciar sesión</Button>
+                                        <Button color="primary" size="lg" type="submit" className="text-uppercase" block onClick={()=>ChangeState({statusApp:undefined})}>Iniciar sesión</Button>
                                     </Col>
                                 </Row>
                             </Form>

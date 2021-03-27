@@ -1,13 +1,15 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { Nav, Collapse } from "reactstrap";
 // import { useSelector } from "react-redux";
-import {useLocation} from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 import FeatherIcon from "feather-icons-react";
+import { AppContext } from "../../../Context/App.Context";
 
 const Sidebar = (props) => {
-    let location = useLocation();
+  let location = useLocation();
 
+  const { ChangeState } = useContext(AppContext)
   const activeRoute = (routeName) => {
     return location.pathname.indexOf(routeName) > -1 ? "selected" : "";
   };
@@ -23,7 +25,7 @@ const Sidebar = (props) => {
     iconsPages: activeRoute("/extra/icons") !== "" ? true : false,
     //extrapages: activeRoute("/sample-pages/extra-pages") !== "" ? true : false,
   });
-//   const settings = useSelector((state) => st ate.settings);
+  //   const settings = useSelector((state) => st ate.settings);
 
   /*--------------------------------------------------------------------------------*/
   /*To Expand SITE_LOGO With Sidebar-Menu on Hover                                  */
@@ -43,8 +45,8 @@ const Sidebar = (props) => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-   const showMobilemenu = () => {
-    if(window.innerWidth < 800){
+  const showMobilemenu = () => {
+    if (window.innerWidth < 800) {
       document.getElementById("main-wrapper").classList.toggle("show-sidebar");
     }
   };
@@ -143,7 +145,7 @@ const Sidebar = (props) => {
                                           }
                                           key={key}
                                         >
-                                          <NavLink
+                                          {/* <NavLink
                                             to={prop.path}
                                             activeClassName="active"
                                             className="sidebar-link"
@@ -152,7 +154,7 @@ const Sidebar = (props) => {
                                             <span className="hide-menu">
                                               {prop.name}
                                             </span>
-                                          </NavLink>
+                                          </NavLink> */}
                                         </li>
                                       );
                                     })}
@@ -173,7 +175,12 @@ const Sidebar = (props) => {
                               >
                                 <NavLink
                                   to={prop.path}
-                                  onClick={showMobilemenu}
+                                  onClick={() => {
+                                    if (prop.name == "Vehiculos") {
+                                      ChangeState({ TypeLinkVehicle: 1 })
+                                    }
+                                    showMobilemenu()
+                                  }}
                                   className="sidebar-link"
                                   activeClassName="active"
                                 >
