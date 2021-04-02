@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "parcel public/index.html --port 5000 --no-autoinstall --no-source-maps"
+    "start": "parcel public/index.html --port 5000 --no-autoinstall --no-source-maps",
+    "build": "parcel build public/index.html"
   },
   "keywords": [],
   "author": "",
