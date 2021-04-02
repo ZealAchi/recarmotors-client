@@ -13,6 +13,7 @@ import NoMatch from '../Pages/NoMatch';
 import { Vehiculos } from '../Pages/Auth/Vehiculos';
 import { ShowVehicle } from '../Pages/Auth/Vehiculos/show';
 import { Mecanica } from '../Pages/Auth/Mecanica';
+import { Almacen } from '../Pages/Auth/Almacen';
 export const Rutas = [
     {
         exact: true,
@@ -78,6 +79,11 @@ export const Rutas = [
         exact:true,
         path:"/mecanica",
         component:()=><Mecanica/>
+    },
+    {
+        exact:true,
+        path:"/almacen",
+        component:()=><Almacen/>
     },
 
     
