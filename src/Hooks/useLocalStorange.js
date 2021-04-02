@@ -1,18 +1,20 @@
 
 export function useLocalStorage() {
-    const getData = async(key, SaveData) => {
+    const getData = async (key, SaveData) => {
         try {
             if (!SaveData) { alert('Error al obtener el dato') }
             else {
-                await SaveData(JSON.parse(localStorage.getItem(key)))
+                await SaveData(JSON.parse(window.atob(localStorage.getItem(key))))
             }
-        } catch (error) {console.log(error)}
+        } catch (error) { console.log(error) }
     }
-    const setData = async(key, value) => {
-        if (!value) { alert('Ingresa un valor') } else
-           await localStorage.setItem(key, JSON.stringify(value));
+    const setData = async (key, value) => {
+        if (!value) { alert('Ingresa un valor') } else {
+            await localStorage.setItem(key, window.btoa(JSON.stringify(value)));
+        }
+
     }
-    const removeItem = async(key) => {
+    const removeItem = async (key) => {
         await localStorage.removeItem(key);
     }
     return { getData, setData, removeItem }
