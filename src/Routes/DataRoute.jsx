@@ -14,6 +14,8 @@ import { Vehiculos } from '../Pages/Auth/Vehiculos';
 import { ShowVehicle } from '../Pages/Auth/Vehiculos/show';
 import { Mecanica } from '../Pages/Auth/Mecanica';
 import { Almacen } from '../Pages/Auth/Almacen';
+import { AgregarProducto } from '../Pages/Auth/Almacen/AgregarProducto';
+import { ShowProducto } from '../Pages/Auth/Almacen/ShowProducto';
 export const Rutas = [
     {
         exact: true,
@@ -85,6 +87,17 @@ export const Rutas = [
         path:"/almacen",
         component:()=><Almacen/>
     },
+    {
+        exact:true,
+        path:"/almacen/agregar",
+        component:()=><AgregarProducto/>
+    },
+    {
+        exact:true,
+        path:"/almacen/:id",
+        component:()=><ShowProducto/>
+    },
+
 
     
 

@@ -1,7 +1,14 @@
 import React from 'react'
 import { Card, CardBody, CardTitle, Row, Col, CardImg, CardSubtitle, Badge } from 'reactstrap';
 import { CardAlmacen } from '../../../Components/Card/Almacen/CardAlmacen';
+import { useHistory } from "react-router-dom";
+
 export function Almacen() {
+    let history = useHistory();
+
+    function AgregarProducto() {
+        history.push("/almacen/agregar");
+    }
     return (
         <>
             <Row>
@@ -16,7 +23,7 @@ export function Almacen() {
                                     </span>
                                 </div>
                             </div>
-                            <button className="btn btn-success" onClick={() => { }}>Agregar Producto</button>
+                            <button className="btn btn-success" onClick={() => {AgregarProducto() }}>Agregar Producto</button>
                         </CardBody>
                     </Card>
                 </Col>

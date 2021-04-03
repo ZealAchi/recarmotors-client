@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Card, CardBody, Col, Form, FormGroup, Label, Row } from 'reactstrap';
 import { CardVehicle } from '../../../Components/Card/CardVehicle/CardVehicle1';
 import Datetime from "react-datetime";
@@ -21,6 +21,9 @@ export function AsignarTranslados() {
 }
 function DatosParaTransladar() {
     const [comentarios, setComentarios] = useState(listaComentarios)
+    
+    
+
     return (
         <>
             <Card>
